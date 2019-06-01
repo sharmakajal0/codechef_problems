@@ -1,8 +1,9 @@
 for _ in range(int(input())):
     n = int(input())
-    S = [int(i)for i in input().split()]
+    horses = [int(i)for i in input().split()]
     y = [None]*(n-1)
-    t = S.sort()
+    for i in range(n-1):
+        t = horses.sort()
     for x in range(n-1):
-        y[x]= S[x+1]-S[x]
-    print(min[y])
+        y[x]= horses[x+1]-horses[x]
+    print(min(y))
