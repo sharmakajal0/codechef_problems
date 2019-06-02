@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+#program for subtraction of two numbers
 a, b = map(int, input().split(" "))
 
 a -= b
