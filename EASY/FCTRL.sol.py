@@ -1,3 +1,4 @@
+# program for factorial
 for i in range(int(input())):
     n= int(input())
     count = 0
