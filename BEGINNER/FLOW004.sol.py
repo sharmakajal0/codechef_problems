@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 t = int(input())
 def first(n):
     while n>=10:
