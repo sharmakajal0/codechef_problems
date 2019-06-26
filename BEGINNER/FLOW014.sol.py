@@ -4,14 +4,11 @@
 # Question URL: https://www.codechef.com/problems/FLOW014
 ##
 
-t = int(input())
-
-for _ in range(t):
-    p, q, r = input().split()
-    p, q, r = int(p), float(q), int(r)
-    p > 50
-    q < 0.7
-    r > 5600
+for _ in range(int(input())):
+    p, q, r =map(float, input().split())
+    p = p > 50
+    q = q < 0.7
+    r = r > 5600
 
     if(p and q and r):
         grade = 10
@@ -21,8 +18,8 @@ for _ in range(t):
         grade = 8
     elif(p and r):
         grade = 7
-    elif(p and ( not q and not r) or q and (not p and not r) or r and (not p and not q)):
+    elif(p or q or r):
         grade = 6
-    elif(not p and not q and not r):
+    else:
         grade = 5
     print(grade)
