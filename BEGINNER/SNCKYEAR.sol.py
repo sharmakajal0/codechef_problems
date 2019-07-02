@@ -10,3 +10,4 @@ for _ in range(int(input())):
         print("HOSTED")
     else:
         print("NOT HOSTED")
+        
