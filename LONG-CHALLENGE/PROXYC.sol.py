@@ -1,30 +1,33 @@
 #!/usr/bin/env python
-
-t = int(input())
-while (t):
-    t -= 1
-    d = int(input())
-    s = input()
-    p = 0
+import string
+import random
+for _ in range(int(input())):
+    D = int(input())
+    P = 0
     proxy = 0
+    S = input() 
+    for i in range(len(S)):
+        if(S[i] == 'P'):
+            P += 1
+    A = P/D
+    if A >= 0.75:
+        print(proxy)
+    else:
+        for d in range(D):
+            if d == 1 and d == 2 and d == D - 1 and d == D - 2:
+                proxy += 0
 
-    for i in range(d):
-        if(s[i] == 'P'):
-            p += 1
-    A = (p * 100)/d
-    
-    if (A < 75):
-        for i in range(2, d-2):
-            if s[i] == "A" and s[i - 1] == 'P' and s[i - 2] == 'P' and s[i + 1] == 'P' and s[i + 2] == 'P': 
-                p += 1
+            elif d == 'P' and d + 1 =='P':
                 proxy += 1
-                A = (p * 100)/d
-                if (A >= 75):
-                    print(proxy)
-                    break
-        if A >= 75:
+            else:
+                proxy += 0
+                continue
+        #    else:
+         #       proxy = proxy + 1
+          #      break
+        P = P + proxy
+        A = P / D
+        if A >= 0.75:
             print(proxy)
         else:
             print("-1")
-    else:
-        print("0")
