@@ -1,15 +1,17 @@
 #!/usr/bin/env python
 
+'''Module for Time'''
+def time(x_one, x_two, x_three, v_one, v_two):
 
-def time(x1, x2, x3, v1, v2):
-    t1 = (x3 - x1)/v1
-    t2 = (x2 - x3)/v2
+    '''Function Definition for Calculating time'''
+    t_one = (x_three - x_one)/v_one
+    t_two = (x_two - x_three)/v_two
 
-    if t1 > t2:
+    if t_one > t_two:
         print("Kefa")
-    if t1 < t2:
+    if t_one < t_two:
         print("Chef")
-    if t1 == t2:
+    if t_one == t_two:
         print("Draw")
 
 for i in range(int(input())):
