@@ -2,6 +2,10 @@
 
 '''Module for GCD 2'''
 
+##
+# Question URL: https://www.codechef.com/problems/GCD2
+##
+
 def gcd(num_one, num_two):
 
     '''Function definition to find the greatest common divisor'''
