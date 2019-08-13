@@ -1,22 +1,22 @@
 #!/usr/bin/env python
 
+'''Module for guddu on a date'''
 ##
 # Question URL: https://www.codechef.com/problems/KS2
 ##
 
-def sum(n):
-    if n == 0:
+def guddu_date(int_n):
+
+    '''Function for guddu on a date'''
+    if int_n == 0:
         return 0
-    return (n % 10 + sum(int(n/10)))
+    return int_n % 10 + guddu_date(int(int_n/10))
 
-t = int(input())
-while(t > 0):
-    t -= 1
-    n = int(input())
-    s = sum(n)
-    s = s % 10
-    ans = 10 - s
-    if ans == 10:
-        ans = 0
-    print(int(str(n) + str(ans)))
-
+for _ in range(int(input())):
+    N = int(input())
+    total_sum = guddu_date(N)
+    total_sum = total_sum % 10
+    req_ans = 10 - total_sum
+    if req_ans == 10:
+        req_ans = 0
+    print(int(str(N) + str(req_ans)))
