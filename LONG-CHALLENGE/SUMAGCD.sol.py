@@ -1,31 +1,49 @@
-import sys
+#!/usr/bin/env python
 
-def gcd(x, y):
-    while x != 0 and y != 0:
-        z = y
-        y = x % y
-        x = z
-    return x + y
-def second_gcd(A, gcd1):
+'''Module for sum and GCD'''
+
+##
+# Question URL: https://www.codechef.com/problems/SUMAGCD
+##
+
+def gcd(num_one, num_two):
+
+    '''Function for GCD'''
+    while num_one != 0 and num_two != 0:
+        temp_var = num_two
+        num_two = num_one % num_two
+        num_one = temp_var
+
+    return num_one + num_two
+
+def second_gcd(test_list, gcd1):
+
+    '''Function for second GCD'''
     ret = 0
-    for x in A:
-        if x % gcd1 != 0:
-            ret = gcd(ret, x)
+
+    for i in test_list:
+        if i % gcd1 != 0:
+            ret = gcd(ret, i)
+
     if ret == 0:
-        return A[-1]
+        return test_list[-1]
+
     return ret
 
-t = int(input())
-for _ in range(t):
+
+for _ in range(int(input())):
     n = int(input())
-    A = list(map(int, input().split()))
-    A.sort()
+    A_LIST = list(map(int, input().split()))
+    A_LIST.sort()
 
     d = 1
     answer = 0
-    while d * d <= A[0]:
-        if A[0] % d == 0:
-            answer = max(answer, d + second_gcd(A, d))
-            answer = max(answer,A[0] // d + second_gcd(A, A[0] // d))
+
+    while d * d <= A_LIST[0]:
+        if A_LIST[0] % d == 0:
+            answer = max(answer, d + second_gcd(A_LIST, d))
+            answer = max(answer, A_LIST[0] // d + second_gcd(A_LIST, A_LIST[0] // d))
+
         d = d + 1
+
     print(answer)
